@@ -17,7 +17,8 @@
 
     @Html.LabelFor(c => c.CNP, "CNP:")
     <br />
-    @Html.TextBoxFor(c => c.CNP, null, new { placeholder = "Type  in  the  CNP", @class = "form-control" }) @Html.ValidationMessageFor(c => c.CNP, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(c => c.CNP, null, new { placeholder = "Type  in  the  CNP", @class = "form-control" }) 
+    @Html.ValidationMessageFor(c => c.CNP, "", new { @class = "text-danger" })
     <br />
     <br />
 
@@ -26,13 +27,7 @@
     @Html.TextBoxFor(c => c.BirthDay, null, new { placeholder = "Day", @class = "form-control", @style = "margin-bottom:3px" })
     @Html.ValidationMessageFor(c => c.BirthDay, "", new { @class = "text-danger" })
 
-    @Html.TextBoxFor(c => c.BirthMonth, null, new
-    {
-        placeholder = "Month",
-        @class = "form-control",
-        @style
-    = "margin-bottom:3px"
-    })
+    @Html.TextBoxFor(c => c.BirthMonth, null, new { placeholder = "Month", @class = "form-control", @style = "margin-bottom:3px"})
     @Html.ValidationMessageFor(c => c.BirthMonth, "", new { @class = "text-danger" })
 
     @Html.TextBoxFor(c => c.BirthYear, null, new { placeholder = "Year", @class = "form-control", @style = "margin-bottom:3px", @type = "number" })
