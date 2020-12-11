@@ -1,0 +1,42 @@
+﻿@model DeputRapid.Models.Book
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Book", method: FormMethod.Post))
+{
+    @Html.Label("Title", "Book Title:")
+    <br />
+    @Html.TextBoxFor(b => b.Title, null, new { placeholder = "Type in the book's title", @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.Title, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("Author", "Author:")
+    <br />
+    @Html.TextBoxFor(b => b.Author, null, new { placeholder = "Type in the book's author", @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.Author, "", new { @class = "text-danger" })
+    <br />
+
+    @Html.Label("NoOfPages", "Number of pages:")
+    <br />
+    @Html.TextBoxFor(b => b.NoOfPages, null, new { placeholder = "Type in the book's number of pages", @class = "form-control"})
+    @Html.ValidationMessageFor(b => b.NoOfPages, "", new { @class = "text-danger"})
+    <br />
+
+    @Html.Label("Summary", "Syummary:")
+    @Html.TextArea("Summary", null, new { placeholder = "Type in book's summary", @class = "form-control" })
+    @Html.ValidationMessageFor(b => b.Summary, "", new { @class = "text-danger" })
+    <br />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}
+
+
+@Html.Label("BookType", "Book Type:")
+<br />
+@Html.DropDownListFor(b => b.BookTypeId, new SelectList(Model.BookTypesList, "Value", "Text"), "Choose a book type", new { @class = "form-control" })
+@Html.ValidationMessageFor(b => b.BookTypeId, "", new { @class = "text-danger" })
+<br />
+<br />
